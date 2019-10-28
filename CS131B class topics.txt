@@ -1,0 +1,13 @@
+1. Overview of Python.
+	Working on repl.it and hills with Python3 – making a program, uploading and downloading programs
+2. Input and Output with input() and print()
+3. Types and Operators for numbers
+4. Basic statements assigning, variable names, expressions, print, selection if /if else/if elif else), repetition (while and for loops)
+5. Collections and Sequences -- strings, lists, dictionaries, tuples, sets, and how to perform slicing, searching, and sorting
+6. Functions – defining, scope, parameters, defaults, built-ins
+7. Modules – purpose, namespaces, importing
+8. Classes and Objects – attributes & methods, controlling access to methods, using default arguments with constructors, destructors, class attributes, overloading, inheritance, designing with classes, basic object oriented programming
+9. Recursive programming, Iterative programming, Functional programming with comprehensions
+10. Files – create, reading, writing, manual close
+11. Regular Expressions
+12. Other topics as time permits
