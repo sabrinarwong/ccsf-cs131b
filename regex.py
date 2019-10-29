@@ -2,7 +2,7 @@
 # @Author: sabrina
 # @Date:   2019-09-11 19:37:21
 # @Last Modified by:   Sabrina Wong
-# @Last Modified time: 2019-10-28 00:20:01
+# @Last Modified time: 2019-10-28 21:56:51
 
 import re
 import inspect
@@ -10,11 +10,11 @@ import inspect
 def regex1(string):
 	'(1) a regular expression that matches something that has one or more lowercase letters'
 
-	regex = re.match(r'[a-z]', string, re.M | re.S)
+	regex = re.match(r'.*[a-z]+', string, re.M | re.S)
 	if regex:
-		print(string, "matches a regular expression that indicates it has lowercase letters")
+		print(repr(string), "matches a regular expression that indicates it has lowercase letters")
 	else:
-		print(string, "does not match a regular expression that indicates it has lowercase letters")
+		print(repr(string), "does not match a regular expression that indicates it has lowercase letters")
 	pass
 
 
@@ -22,22 +22,22 @@ def regex1(string):
 def regex2(string):
 	'(2) a regular expression that matches something that has one or more uppercase letters'
 	
-	regex = re.match(r'[A-Z]', string, re.M | re.S)
+	regex = re.match(r'.*[A-Z]+', string, re.M | re.S)
 	if regex:
-		print(string, "matches a regular expression that indicates it has uppercase letters")
+		print(repr(string), "matches a regular expression that indicates it has uppercase letters")
 	else:
-		print(string, "does not match a regular expression that indicates it has uppercase letters")
+		print(repr(string), "does not match a regular expression that indicates it has uppercase letters")
 	pass
 
 
 def regex3(string):
 	'(3) a regular expression that matches something that has one or more digits (that is, 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9).'
 
-	regex = re.match(r'\d+', string, re.M | re.S)
+	regex = re.match(r'.*\d+', string, re.M | re.S)
 	if regex:
-		print(string, "matches a regular expression that indicates it has digits")
+		print(repr(string), "matches a regular expression that indicates it has digits")
 	else:
-		print(string, "does not match a regular expression that indicates it has digits")
+		print(repr(string), "does not match a regular expression that indicates it has digits")
 	pass
 
 if __name__ == '__main__':
@@ -49,14 +49,17 @@ if __name__ == '__main__':
 	regex1(string1)
 	regex2(string1)
 	regex3(string1)
+	print("\n")
 
 	regex1(string2)
 	regex2(string2)
 	regex3(string2)
+	print("\n")
 
 	regex1(string3)
 	regex2(string3)
 	regex3(string3)
+	print("\n")
 
 	regex1(string4)
 	regex2(string4)
