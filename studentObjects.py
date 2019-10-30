@@ -16,35 +16,36 @@ class Student:
 	gpa = None
 
 	# 3a. Write a value-returning function to create and return a single student object. Design console prompts and input statements in the function for the eight data fields.
-	def __init__(self, name=None, address=None, city=None, state=None, zipcode=None, sid=None, gpa=None):
-		self.name = (name or input("Enter your name: "))
-		self.address = (address or input("Enter your address: "))
-		self.city = (city or input("Enter your city: "))
-		self.state = (state or input("Enter your state: "))
-		self.zip_code = (zipcode or input("Enter your zipcode: "))
-		self.student_id = (sid or input("Enter your sid: "))
-		self.gpa = (gpa or input("Enter your gpa: "))
+	def __init__(self):
+		self.name = input("Enter your name: ")
+		self.address = input("Enter your address: ")
+		self.city = input("Enter your city: ")
+		self.state = input("Enter your state: ")
+		self.zip_code = int(input("Enter your zipcode: "))
+		self.student_id = int(input("Enter your sid: "))
+		self.gpa = float(input("Enter your gpa: "))
 
 		print("\n")
 
 	# 4a. Write a void function to output nicely formatted labels and values for a single student object’s data fields.
 	def print(self):
-		print("name: ${self.name}", 
-			  "address: ${self.address}", 
-			  "city: ${self.city}", 
-			  "state: ${self.state}", 
-			  "zip code: ${self.zip_code}", 
-			  "student id: ${self.student_id}", 
-			  "gpa: ${self.gpa}", sep="\n", end="\n")
+		print(f"name: {self.name}", 
+			  f"address: {self.address}", 
+			  f"city: {self.city}", 
+			  f"state: {self.state}", 
+			  f"zip code: {self.zip_code}", 
+			  f"student id: {self.student_id}", 
+			  f"gpa: {self.gpa}", sep="\n", end="\n\n")
 
-# 2. In main, declare 3 uninitialized student objects, using either by making a list of 3 objects or 3 individual objects -- your choice. 
+# 2. In main, declare 3 uninitialized student objects, using either by making a list of 3 objects or 3 individual objects -- your choice.
 if __name__ == '__main__':
-	# 3b. Call the function three times – once to initialize each of main’s student objects. 
+	# 3b. Call the function three times – once to initialize each of main’s student objects.
 	students_list = [Student(), Student(), Student()]
 
 	# 4b. Call the function three times – once for each student object.
-	for i in students_list:
-		i.print()
+	for i in range(len(students_list)):
+		print("Output for Student", i+1)
+		students_list[i].print()
 
 
 # END OF PROGRAM
@@ -61,24 +62,24 @@ Write a program that the college Admissions office can use to manage the records
 
 Requirements   
 
-Write studentObjects.py, per this specification: 
+Write studentObjects.py, per this specification:
 
-1. Create an object specification with these seven data fields: name, address, city, state, zip, student id, and gpa. 
+1. Create an object specification with these seven data fields: name, address, city, state, zip, student id, and gpa.
 
-2. In main, declare 3 uninitialized student objects, using either by making a list of 3 objects or 3 individual objects -- your choice. 
+2. In main, declare 3 uninitialized student objects, using either by making a list of 3 objects or 3 individual objects -- your choice.
 
-3. Write a value-returning function to create and return a single student object. Design console prompts and input statements in the function for the eight data fields. Call the function three times – once to initialize each of main’s student objects. 
+3. Write a value-returning function to create and return a single student object. Design console prompts and input statements in the function for the eight data fields. Call the function three times – once to initialize each of main’s student objects.
 
 4. Write a void function to output nicely formatted labels and values for a single student object’s data fields. Call the function three times – once for each student object.
  
 Program I/O.
 Input: from the console keyboard, the personal information for each of 3 students, one student at a time.
-Output: a labeled summary of the personal information as entered for each of 3  students.
+Output: a labeled summary of the personal information as entered for each of 3 students.
  
  
 Example. Your program's console I/O should look something like this, where the user input in this example is shown with italics lettering:
 
-	Enter for Student 1  name: Joe Student
+	Enter for Student 1 name: Joe Student
 	address: 123 Long Road
 	city: Happytown
 	state: CA
@@ -93,7 +94,7 @@ Example. Your program's console I/O should look something like this, where the u
 	address: 789 Grand Street
 	city: Joytown
 	...
-	 Output for Student 1
+	Output for Student 1
 	name: Joe Student
 	address: 123 Long Road
 	city: Happytown
