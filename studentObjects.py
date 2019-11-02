@@ -5,8 +5,9 @@
 # @Last Modified time: 2019-10-28 23:09:11
 
 
-# 1. Create an object specification with these seven data fields: name, address, city, state, zip, student id, and gpa. 
 class Student:
+
+	#variables to store student information
 	name = None
 	address = None
 	city = None
@@ -15,7 +16,9 @@ class Student:
 	student_id = None
 	gpa = None
 
-	# 3a. Write a value-returning function to create and return a single student object. Design console prompts and input statements in the function for the eight data fields.
+	# initialization constructor used when a new instance of the student is created.
+	# self is referencing the current object 
+	# constructor prompts user input to fill in variables. 
 	def __init__(self):
 		self.name = input("Enter your name: ")
 		self.address = input("Enter your address: ")
@@ -27,7 +30,7 @@ class Student:
 
 		print("\n")
 
-	# 4a. Write a void function to output nicely formatted labels and values for a single student object’s data fields.
+	# self in the parameter is used as a reference to the object data fields. F-strings are used in the print statement for string format syntax with variables. 
 	def print(self):
 		print(f"name: {self.name}", 
 			  f"address: {self.address}", 
@@ -39,10 +42,10 @@ class Student:
 
 # 2. In main, declare 3 uninitialized student objects, using either by making a list of 3 objects or 3 individual objects -- your choice.
 if __name__ == '__main__':
-	# 3b. Call the function three times – once to initialize each of main’s student objects.
+	#array with student objects. Each student object is initialized through the constructor method. 
 	students_list = [Student(), Student(), Student()]
 
-	# 4b. Call the function three times – once for each student object.
+	# Loop to print out student object variables. Print() is a method created in the student class. 
 	for i in range(len(students_list)):
 		print("Output for Student", i+1)
 		students_list[i].print()
