@@ -2,7 +2,7 @@
 # @Author: sabrina
 # @Date:   2019-09-11 19:37:21
 # @Last Modified by:   Sabrina Wong
-# @Last Modified time: 2019-10-28 21:56:51
+# @Last Modified time: 2019-11-15 20:48:59
 
 import re
 import inspect
@@ -10,6 +10,12 @@ import inspect
 def regex1(string):
 	'(1) a regular expression that matches something that has one or more lowercase letters'
 
+	# re.match() starts checking for matches at the beginning of the string 
+	# .*[a-z]+
+	#	.* (matches 0 or more chars of any type.)
+	# 	[a-z]+ (matches 1 or more of the lowercase letters)
+	# 		- set in the beginning to indicate there can be 0 or more characters before the lowercase letters are matched
+	#  used `re.M` and `re.S` to match any character anywhere of any line
 	regex = re.match(r'.*[a-z]+', string, re.M | re.S)
 	if regex:
 		print(repr(string), "matches a regular expression that indicates it has lowercase letters")
@@ -21,7 +27,13 @@ def regex1(string):
 
 def regex2(string):
 	'(2) a regular expression that matches something that has one or more uppercase letters'
-	
+
+	# re.match() starts checking for matches at the beginning of the string 
+	# .*[A-Z]+
+	#	.* (matches 0 or more chars of any type.)
+	# 	[A-Z]+ (matches 1 or more of the uppercase letters)
+	# 		- set in the beginning to indicate there can be 0 or more characters before the uppercase letters are matched
+	#  used `re.M` and `re.S` to match any character anywhere of any line	
 	regex = re.match(r'.*[A-Z]+', string, re.M | re.S)
 	if regex:
 		print(repr(string), "matches a regular expression that indicates it has uppercase letters")
@@ -32,7 +44,12 @@ def regex2(string):
 
 def regex3(string):
 	'(3) a regular expression that matches something that has one or more digits (that is, 0, 1, 2, 3, 4, 5, 6, 7, 8, or 9).'
-
+	# re.match() starts checking for matches at the beginning of the string 
+	# .*\d+
+	#	.* (matches 0 or more chars of any type.)
+	# 	\d+ (matches 1 or more of the digits)
+	# 		- set in the beginning to indicate there can be 0 or more characters before the digits are matched
+	#  used `re.M` and `re.S` to match any character anywhere of any line
 	regex = re.match(r'.*\d+', string, re.M | re.S)
 	if regex:
 		print(repr(string), "matches a regular expression that indicates it has digits")
